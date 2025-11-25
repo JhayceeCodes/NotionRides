@@ -140,6 +140,16 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+### -> Start Celery Workers (For Background and Periodic Tasks)
+Run the Celery Worker
+```bash
+celery -A notion_rides worker --loglevel=info
+```
+Start the Scheduler (Celery Beat)
+```bash
+celery -A notion_rides beat --loglevel=info
+```
+
 ---
 
 ## Environment Variables
