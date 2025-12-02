@@ -196,7 +196,7 @@ class RequestPasswordResetView(APIView):
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            return Response({'error': 'No user with this email'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'message': 'Password reset email sent'}, status=status.HTTP_200_OK)
 
         uid, token = generate_token(user)
         #reset_link = f"{request.scheme}://{request.get_host()}/api/accounts/reset/{uid}/{token}/"
