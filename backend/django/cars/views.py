@@ -237,10 +237,14 @@ class RequestCancelReservationView(generics.GenericAPIView):
         )
 
 
-        if request.user.is_authenticated:
-            email = request.user.email
+        user = request.user
+        if user.is_owner and user == reservation.car.owner:
+            email = user.email
         else:
-            email = reservation.guest_email
+            email = reservation.customer_email
+        
+        masked_email = self.mask_email(email) if email else None
+        
 
         """Thread(
             target=send_cancel_confirmation_email, 
