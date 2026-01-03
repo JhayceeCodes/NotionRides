@@ -154,7 +154,7 @@ celery -A notion_rides beat --loglevel=info
 
 ## Environment Variables
 
-Create a `.env` file containing, and use .env.example as a template to fill in necessary credentials.
+Create a `.env` file and use .env.example as a template to fill in necessary credentials.
 
 ---
 
