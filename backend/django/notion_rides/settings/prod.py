@@ -4,6 +4,9 @@ import os
 DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 frontend_urls = os.getenv("FRONTEND_URLS", "")
 if frontend_urls:
     CORS_ALLOWED_ORIGINS = [url.strip() for url in frontend_urls.split(",")]
