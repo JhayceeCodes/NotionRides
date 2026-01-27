@@ -177,7 +177,6 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
-SESSION_COOKIE_SECURE = True
 
 #TIME LIMIT FOR LINK (10 min)
 PASSWORD_RESET_TIMEOUT = 600 
